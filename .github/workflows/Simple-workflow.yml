@@ -24,6 +24,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      - name: Set Maven Version
+        run: mvn version:set -DnewVersion=${GITHUB_RUN_NUMBER}
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
