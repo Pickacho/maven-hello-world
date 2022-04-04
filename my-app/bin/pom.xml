@@ -13,14 +13,6 @@
       <annotatedJdk>${org.checkerframework:jdk8:jar}</annotatedJdk>
   </properties>
 
-    <scm>
-        <connection>scm:git:git@github.com:Pickacho/maven-hello-world.git</connection>
-        <developerConnection>scm:git:git@github.com:Pickacho/maven-hello-world.git</developerConnection>
-        <url>https://github.com/Pickacho/maven-hello-world</url>
-        <tag>@{project.version}</tag>
-    </scm>
-
-
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -113,18 +105,6 @@
               </compilerArgs>
           </configuration>
       </plugin>
-       <plugin>
-           <groupId>org.apache.maven.plugins</groupId>
-           <artifactId>maven-release-plugin</artifactId>
-           <version>2.5.3</version>
-           <configuration>
-	             <goals>pre-integration-test</goals>
-	             <preparationGoals>package</preparationGoals>
-	             <allowTimestampedSnapshots>true</allowTimestampedSnapshots>
-	             <tagNameFormat>@{project.version}</tagNameFormat>
-	             <remoteTagging>false</remoteTagging>
-           </configuration>
-       </plugin>
     </plugins>
   </build>
 </project>
