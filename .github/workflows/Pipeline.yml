@@ -33,12 +33,12 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file my-app/pom.xml
       
-    - run: mvn --batch-mode --update-snapshots verify --file my-app/pom.xml
-    - run: mkdir /tmp/staging && cp /tmp/target/*.jar staging
-    - uses: actions/upload-artifact@v3
-      with:
-        name: Package
-        path: staging
+#     - run: mvn --batch-mode --update-snapshots verify --file my-app/pom.xml
+#     - run: mkdir /tmp/staging && cp /tmp/target/*.jar staging
+#     - uses: actions/upload-artifact@v3
+#       with:
+#         name: Package
+#         path: staging
     
 #     - name: cd to /home/runner/work/maven-hello-world/maven-hello-world/settings.xml
 #       run: cd /home/runner/work/maven-hello-world/maven-hello-world/
