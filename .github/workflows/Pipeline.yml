@@ -31,8 +31,9 @@ jobs:
       run: mvn compile --file my-app/pom.xml
 
     - name: Build with Maven
-      run: mvn -B package --file my-app/pom.xml
-      
+      run: mvn -B package --file my-app/pom.xml 
+    - name: package
+      run: ls -R my-app
 #     - run: mvn --batch-mode --update-snapshots verify --file my-app/pom.xml
 #     - run: mkdir /tmp/staging && cp /tmp/target/*.jar staging
 #     - uses: actions/upload-artifact@v3
@@ -43,13 +44,13 @@ jobs:
 #     - name: cd to /home/runner/work/maven-hello-world/maven-hello-world/settings.xml
 #       run: cd /home/runner/work/maven-hello-world/maven-hello-world/
     
-    - name: Generate settings.xml for Maven Builds
-      uses: whelk-io/maven-settings-xml-action@v20
-      with:
-        output_file: /home/runner/work/maven-hello-world/maven-hello-world/settings.xml
+#     - name: Generate settings.xml for Maven Builds
+#       uses: whelk-io/maven-settings-xml-action@v20
+#       with:
+#         output_file: /home/runner/work/maven-hello-world/maven-hello-world/settings.xml
 
     
-    - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy  -s $GITHUB_WORKSPACE/settings.xml  --file my-app/pom.xml
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
+#     - name: Publish to GitHub Packages Apache Maven
+#       run: mvn deploy  -s $GITHUB_WORKSPACE/settings.xml  --file my-app/pom.xml
+#       env:
+#         GITHUB_TOKEN: ${{ github.token }}
