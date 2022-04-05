@@ -56,7 +56,7 @@ jobs:
         path: my-app/src/main/java/com/mycompany/app/Dockerfile
         
     - name: docker build
-      run: docker build -f /home/runner/work/maven-hello-world/maven-hello-world/my-app/src/main/java/com/mycompany/app/Dockerfile
+      run: docker build -f /home/runner/work/maven-hello-world/maven-hello-world/my-app/src/main/java/com/mycompany/app/Dockerfile .
     - name: Login to DockerHub
       uses: docker/login-action@v1
       with:
