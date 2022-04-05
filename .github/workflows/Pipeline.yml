@@ -55,3 +55,6 @@ jobs:
         name: Dockerfile
         path: my-app/src/main/java/com/mycompany/app/Dockerfile
         
+    - name: docker build
+      run: docker build  my-app/src/main/java/com/mycompany/app/Dockerfile -t helloRanjar:1
+        
