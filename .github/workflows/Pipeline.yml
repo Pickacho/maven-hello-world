@@ -57,4 +57,14 @@ jobs:
         
     - name: docker build
       run: docker build -t pickacho:helloworld -f my-app/src/main/java/com/mycompany/app/Dockerfile 
-        
+    - name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Build and push
+      uses: docker/build-push-action@v2
+      with:
+       file: my-app/src/main/java/com/mycompany/app/Dockerfile
+       push: true
+       tags: pikacho/helloworld:latest
