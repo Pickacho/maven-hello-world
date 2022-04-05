@@ -39,6 +39,7 @@ jobs:
       uses: actions/upload-artifact@v3.0.0
       with:
         path: my-app/src/main/java/com/mycompany/app/App.java
+        name: App.Java
       
 #     - run: mvn --batch-mode --update-snapshots verify --file my-app/pom.xml
 #     - run: mkdir /tmp/staging && cp /tmp/target/*.jar staging
