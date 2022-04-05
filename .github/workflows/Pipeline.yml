@@ -32,18 +32,24 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B package --file my-app/pom.xml
-    
+      
+    - run: mvn --batch-mode --update-snapshots verify
+    - run: mkdir staging && cp target/*.jar staging
+    - uses: actions/upload-artifact@v3
+      with:
+        name: Package
+        path: staging
     
 #     - name: cd to /home/runner/work/maven-hello-world/maven-hello-world/settings.xml
 #       run: cd /home/runner/work/maven-hello-world/maven-hello-world/
     
-    - name: Generate settings.xml for Maven Builds
-      uses: whelk-io/maven-settings-xml-action@v20
-      with:
-        output_file: /home/runner/work/maven-hello-world/maven-hello-world/settings.xml
+#     - name: Generate settings.xml for Maven Builds
+#       uses: whelk-io/maven-settings-xml-action@v20
+#       with:
+#         output_file: /home/runner/work/maven-hello-world/maven-hello-world/settings.xml
 
     
-    - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy # -s $GITHUB_WORKSPACE/settings.xml
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
+#     - name: Publish to GitHub Packages Apache Maven
+#       run: mvn deploy # -s $GITHUB_WORKSPACE/settings.xml
+#       env:
+#         GITHUB_TOKEN: ${{ github.token }}
