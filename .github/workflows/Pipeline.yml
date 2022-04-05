@@ -33,7 +33,13 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file my-app/pom.xml 
     - name: ls -HR my-app/*.java
-      run: ls -HR my-app/ | grep *.java
+      run: ls -HR my-app/
+      
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.0.0
+      with:
+        Artifact name: my-app/src/main/java/com/mycompany/app/App.java
+      
 #     - run: mvn --batch-mode --update-snapshots verify --file my-app/pom.xml
 #     - run: mkdir /tmp/staging && cp /tmp/target/*.jar staging
 #     - uses: actions/upload-artifact@v3
