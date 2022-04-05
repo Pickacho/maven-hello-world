@@ -56,5 +56,5 @@ jobs:
         path: my-app/src/main/java/com/mycompany/app/Dockerfile
         
     - name: docker build
-      run: docker build -t Pickacho:helloworld -f my-app/src/main/java/com/mycompany/app/Dockerfile 
+      run: docker build -t pickacho:helloworld -f my-app/src/main/java/com/mycompany/app/Dockerfile 
         
