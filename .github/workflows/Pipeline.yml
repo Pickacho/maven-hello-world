@@ -63,7 +63,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         tags: pikacho/pikachohelloworld:latest
-        file: app/Dockerfile 
+        file: my-app/src/main/java/com/mycompany/app/Dockerfile
         
     - name: Login to DockerHub
       uses: docker/login-action@v1
