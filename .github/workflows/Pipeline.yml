@@ -34,8 +34,8 @@ jobs:
       run: mvn -B package --file my-app/pom.xml
     
     
-    - name: cd to /home/runner/work/maven-hello-world/maven-hello-world/settings.xml
-      run: cd /home/runner/work/maven-hello-world/maven-hello-world/
+#     - name: cd to /home/runner/work/maven-hello-world/maven-hello-world/settings.xml
+#       run: cd /home/runner/work/maven-hello-world/maven-hello-world/
     
     - name: Generate settings.xml for Maven Builds
       uses: whelk-io/maven-settings-xml-action@v20
