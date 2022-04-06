@@ -75,7 +75,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
        push: true
-       tags: pikacho/helloworld:latest
+       tags: onetimemail/pikacho_helloworld:latest
        file: Dockerfile
 
 
