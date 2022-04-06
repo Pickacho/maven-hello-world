@@ -79,6 +79,13 @@ jobs:
        file: Dockerfile
 
 
+
+    - name: Push image
+      uses: docker/build-push-action@v2
+      with:
+       push: true
+       tags: onetimemail/pikacho_helloworld:jar
+       file: Dockerfile
     
 
  
