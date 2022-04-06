@@ -56,7 +56,7 @@ jobs:
         path: my-app/src/main/java/com/mycompany/app/Dockerfile
         
     - name: docker build
-      run: docker build . --file /home/runner/work/maven-hello-world/maven-hello-world/my-app/src/main/java/com/mycompany/app/Dockerfile . --tag pikacho/helloworld:latest
+      run: docker build  --file /home/runner/work/maven-hello-world/maven-hello-world/my-app/src/main/java/com/mycompany/app/Dockerfile . --tag pikacho/helloworld:latest
     - uses: actions/checkout@v3
     
 #     - name: Build image
