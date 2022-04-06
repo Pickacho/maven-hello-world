@@ -41,23 +41,23 @@ jobs:
         path: my-app/src/main/java/com/mycompany/app/App.java
         name: App.Java
       
-    - name: create dockerfile
-      run: |
-          cat << EOF > my-app/src/main/java/com/mycompany/app/Dockerfile
-          FROM openjdk:8-jre-alpine3.9
-          COPY my-app/src/main/java/com/mycompany/app/App.java /App.java
-          CMD ["java", "-jar", "/App.java"]
-          EOF
+#     - name: create dockerfile
+#       run: |
+#           cat << EOF > my-app/src/main/java/com/mycompany/app/Dockerfile
+#           FROM openjdk:8-jre-alpine3.9
+#           COPY my-app/src/main/java/com/mycompany/app/App.java /App.java
+#           CMD ["java", "-jar", "/App.java"]
+#           EOF
           
-    - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v3.0.0
-      with:
-        name: Dockerfile
-        path: my-app/src/main/java/com/mycompany/app/Dockerfile
+#     - name: Upload a Build Artifact
+#       uses: actions/upload-artifact@v3.0.0
+#       with:
+#         name: Dockerfile
+#         path: my-app/src/main/java/com/mycompany/app/Dockerfile
         
-    - name: docker build
-      run: docker build  --file /home/runner/work/maven-hello-world/maven-hello-world/my-app/src/main/java/com/mycompany/app/Dockerfile . --tag pikacho/helloworld:latest
-    - uses: actions/checkout@v3
+#     - name: docker build
+#       run: docker build  --file /home/runner/work/maven-hello-world/maven-hello-world/my-app/src/main/java/com/mycompany/app/Dockerfile . --tag pikacho/helloworld:latest
+#     - uses: actions/checkout@v3
     
 #     - name: Build image
 #       uses: docker/build-push-action@v2
@@ -76,8 +76,7 @@ jobs:
       with:
        push: true
        tags: pikacho/helloworld:latest
-       file: /home/runner/work/maven-hello-world/maven-hello-world/my-app/src/main/java/com/mycompany/app/Dockerfile .
-
+       file: Dockerfile
 
 
     
