@@ -1,5 +1,5 @@
 # Base image is CentOS 7
-FROM Centos:7
+FROM  openjdk:8-jre-alpine3.9
 # Add a new user "john" with user id 8877
 RUN useradd -u 8877 john
 # Change to non-root privilege
